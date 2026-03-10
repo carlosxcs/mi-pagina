@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Servios profesionales de Diseño Gráfico</title>
+<title>Servicios profesionales de Diseño Gráfico</title>
 
 <style>
 
@@ -27,17 +27,24 @@ background:black;
 padding:15px;
 position:sticky;
 top:0;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
 }
 
 nav a{
 color:white;
-margin:0 15px;
+margin:5px 10px;
 text-decoration:none;
 font-size:18px;
+padding:8px 15px;
+border-radius:8px;
+transition:0.3s;
 }
 
 nav a:hover{
-color:#25D366;
+background:#25D366;
+color:white;
 }
 
 /* TITULO */
@@ -152,6 +159,40 @@ text-decoration:none;
 box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
+/* RESPONSIVE PARA CELULAR */
+
+@media (max-width:768px){
+
+nav{
+flex-direction:column;
+align-items:center;
+}
+
+nav a{
+display:block;
+margin:8px 0;
+font-size:20px;
+}
+
+h1{
+font-size:30px;
+}
+
+.servicios{
+flex-direction:column;
+align-items:center;
+}
+
+.galeria img{
+width:90%;
+}
+
+input, textarea{
+width:90%;
+}
+
+}
+
 </style>
 
 </head>
@@ -171,17 +212,15 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 
 </nav>
 
-
 <!-- TITULO -->
 
 <header>
 
-<h1> Diseño que Conecta, Impacta y Destaca</h1>
+<h1>Diseño que Conecta, Impacta y Destaca</h1>
 
 <p>Transformamos tus ideas en diseños creativos y profesionales</p>
 
 </header>
-
 
 <!-- SERVICIOS -->
 
@@ -204,7 +243,6 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 
 </section>
 
-
 <!-- GALERIA -->
 
 <section id="trabajos" class="galeria">
@@ -218,7 +256,6 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 <img src="imagenes/foto5.jpeg">
 
 </section>
-
 
 <!-- SUBIR FOTO -->
 
@@ -237,7 +274,6 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 </a>
 
 </section>
-
 
 <!-- FORMULARIO -->
 
@@ -267,7 +303,6 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 
 </section>
 
-
 <!-- CONTACTO -->
 
 <section id="contacto">
@@ -282,20 +317,17 @@ box-shadow:0 5px 15px rgba(0,0,0,0.3);
 
 </section>
 
-
 <footer>
 
 <p>© 2026 Servicio de Edición</p>
 
 </footer>
 
-
 <!-- BOTON FLOTANTE -->
 
 <a href="https://wa.me/51939760777" class="whatsapp">
 💬
 </a>
-
 
 </body>
 </html>
