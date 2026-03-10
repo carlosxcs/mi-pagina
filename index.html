@@ -10,7 +10,7 @@
 
 <style>
 
-/* FONDO */
+/* GENERAL */
 
 body{
 font-family:Arial;
@@ -25,14 +25,26 @@ color:#333;
 nav{
 background:black;
 padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 position:sticky;
 top:0;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
+z-index:1000;
 }
 
-nav a{
+.logo{
+color:white;
+font-size:20px;
+font-weight:bold;
+margin-left:10px;
+}
+
+.menu{
+display:flex;
+}
+
+.menu a{
 color:white;
 margin:5px 10px;
 text-decoration:none;
@@ -42,9 +54,16 @@ border-radius:8px;
 transition:0.3s;
 }
 
-nav a:hover{
+.menu a:hover{
 background:#25D366;
+}
+
+.menu-icon{
+display:none;
 color:white;
+font-size:28px;
+cursor:pointer;
+margin-right:10px;
 }
 
 /* TITULO */
@@ -71,7 +90,7 @@ padding:40px;
 
 .caja{
 background:white;
-width:220px;
+width:240px;
 padding:25px;
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
@@ -89,7 +108,8 @@ padding:40px;
 }
 
 .galeria img{
-width:200px;
+width:100%;
+max-width:220px;
 border-radius:12px;
 margin:10px;
 box-shadow:0 8px 20px rgba(0,0,0,0.3);
@@ -105,15 +125,16 @@ transform:scale(1.1);
 .subir{
 background:white;
 padding:40px;
-margin:40px;
+margin:40px auto;
 border-radius:15px;
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
+max-width:500px;
 }
 
-input, textarea{
+input{
 margin:10px;
 padding:10px;
-width:250px;
+width:80%;
 border-radius:8px;
 border:1px solid #ccc;
 }
@@ -133,6 +154,12 @@ transition:0.3s;
 
 button:hover{
 background:#1ebe5d;
+}
+
+/* CONTACTO */
+
+.contacto{
+padding:40px;
 }
 
 /* FOOTER */
@@ -159,19 +186,31 @@ text-decoration:none;
 box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* RESPONSIVE PARA CELULAR */
+/* CELULAR */
 
 @media (max-width:768px){
 
-nav{
+.menu{
+display:none;
 flex-direction:column;
-align-items:center;
+width:100%;
+background:black;
+position:absolute;
+top:60px;
+left:0;
 }
 
-nav a{
+.menu a{
+padding:12px;
+border-top:1px solid #333;
+}
+
+.menu.active{
+display:flex;
+}
+
+.menu-icon{
 display:block;
-margin:8px 0;
-font-size:20px;
 }
 
 h1{
@@ -183,11 +222,16 @@ flex-direction:column;
 align-items:center;
 }
 
-.galeria img{
+.caja{
 width:90%;
 }
 
-input, textarea{
+.galeria img{
+width:90%;
+max-width:350px;
+}
+
+input{
 width:90%;
 }
 
@@ -203,12 +247,19 @@ width:90%;
 
 <nav>
 
+<div class="logo">Diseño</div>
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+
 <a href="#">Inicio</a>
 <a href="#servicios">Servicios</a>
 <a href="#trabajos">Trabajos</a>
 <a href="#subir">Enviar foto</a>
-<a href="#formulario">Formulario</a>
 <a href="#contacto">Contacto</a>
+
+</div>
 
 </nav>
 
@@ -275,37 +326,9 @@ width:90%;
 
 </section>
 
-<!-- FORMULARIO -->
-
-<section id="formulario" class="subir">
-
-<h2>Solicitar edición</h2>
-
-<p>Déjanos tus datos y te contactaremos</p>
-
-<form>
-
-<input type="text" placeholder="Tu nombre" required>
-
-<br>
-
-<input type="email" placeholder="Tu correo" required>
-
-<br>
-
-<textarea placeholder="Describe la edición que quieres" rows="4"></textarea>
-
-<br><br>
-
-<button type="submit">Enviar solicitud</button>
-
-</form>
-
-</section>
-
 <!-- CONTACTO -->
 
-<section id="contacto">
+<section id="contacto" class="contacto">
 
 <h2>Contáctanos</h2>
 
@@ -323,12 +346,21 @@ width:90%;
 
 </footer>
 
-<!-- BOTON FLOTANTE -->
+<!-- WHATSAPP -->
 
 <a href="https://wa.me/51939760777" class="whatsapp">
 💬
 </a>
 
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+
+</script>
+
 </body>
 </html>
+
 
